@@ -1,0 +1,10 @@
+.background{
+  background-color: aqua;
+  height:700px;
+  width: auto;
+}
+.login{
+  background-color: darkgrey;
+border: 10px,10px,10px,10px;
+margin-top: 100px;
+}
