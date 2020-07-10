@@ -1,5 +1,5 @@
 import React from "react";
-import { Form, FormGroup, Label, Input, CustomInput } from "reactstrap";
+import { Form, FormGroup, Label, Input,  } from "reactstrap";
 import { Formik } from "formik";
 import { ProfileEditValidator } from "../../validation/utility/ProfileEditValidation";
 
@@ -11,16 +11,18 @@ const SignupComponent = () => {
           firstName: "",
           middleName: "",
           lastName: "",
-          age: "",
-          email: "",
           gender: "",
-          phone: "",
-          date: "",
-          country: "",
-          city: "",
-          state: "",
-          zip: "",
-          picture:"",
+          mobileNo: "",
+          DOB: "",
+          photo: "",
+          pCountry: "",
+          pCity: "",
+          pProvience: "",
+          pPhoneNo: "",
+          tCountry: "",
+          tCity: "",
+          tProvience: "",
+          tPhoneNo: "",
         }}
         onSubmit={(values, actions) => {
           console.log(values);
@@ -41,9 +43,7 @@ const SignupComponent = () => {
             {" "}
             <FormGroup className="mt-4 p-4">
               <h1>Sample Form</h1>
-              <h5 className="text-left m-4">
-                NOTE:All Candidate Must Fillup All Information
-              </h5>
+              <h5 className="text-left my-4">Personal Information</h5>
 
               <div className="row d-flex justify-content-around mt-4">
                 <div className="col-md-4">
@@ -108,45 +108,25 @@ const SignupComponent = () => {
                 </div>
               </div>
 
-              <div className=" row d-flex justify-content-between mt-4">
+              <div className=" row d-flex justify-content-evenly mt-4">
                 <div className="col-md-4">
-                  <Label>Age</Label>
+                  <Label>mobileNo number</Label>
                   <Input
-                    type="number"
-                    name="age"
-                    placeholder="enter your Age"
-                    value={values.age}
-                    min={0}
-                    onChange={handleChange}
-                  />
-                  {touched.age && errors.age && (
-                    <span
-                      className="text-danger col-md-12 text-left mb-2"
-                      style={{ fontSize: 12 }}
-                    >
-                      {errors.age}
-                    </span>
-                  )}
-                </div>
-
-                <div className="col-md-4">
-                  <Label>Phone number</Label>
-                  <Input
-                    name="phone"
+                    name="mobileNo"
                     type="number"
                     placeholder="enter your "
-                    value={values.phone}
+                    value={values.mobileNo}
                     min={99999999}
                     max={9999999999}
                     onChange={handleChange}
                     onBlur={handleBlur}
                   />
-                  {touched.phone && errors.phone && (
+                  {touched.mobileNo && errors.mobileNo && (
                     <span
                       className="text-danger col-md-12 text-left mb-2"
                       style={{ fontSize: 12 }}
                     >
-                      {errors.phone}
+                      {errors.mobileNo}
                     </span>
                   )}
                 </div>
@@ -155,162 +135,239 @@ const SignupComponent = () => {
                   <Label for="exampleDate">Date of Birth</Label>
                   <Input
                     type="date"
-                    name="date"
-                    value={values.date}
+                    name="DOB"
+                    value={values.DOB}
                     id="exampleDate"
                     placeholder="date placeholder"
                     onChange={handleChange}
                     onBlur={handleBlur}
                   />
-                  {touched.date && errors.date && (
+                  {touched.DOB && errors.DOB && (
                     <span
                       className="text-danger col-md-12 text-left mb-2"
                       style={{ fontSize: 12 }}
                     >
-                      {errors.date}
+                      {errors.DOB}
                     </span>
                   )}
+                </div>
+                
+
+              </div>
+              <div>
+                <h5 className="mt-4">gender</h5>
+                
+                  <div className=" mx-4">
+                    <br />
+                    <Input
+                      type="radio"
+                      name="gender"
+                      value="male"
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                    />
+                    <Label className="">male</Label>
+                  </div>
+                  <div className=" mx-4">
+                    <br />
+                    <Input
+                      type="radio"
+                      name="gender"
+                      value="female"
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                    />
+                    <Label className="align-right">female</Label>
+                  </div>
+
+                  {touched.gender && errors.gender && (
+                    <span
+                      className="text-danger col-md-12 text-left mb-2"
+                      style={{ fontSize: 12 }}
+                    >
+                      {errors.gender}
+                    </span>
+                  )}
+               
+              </div>
+
+              
+              <div>
+                <h6 className="mt-4">Temporary Address</h6>
+                <div className="row">
+                  <div className="col-md-3">
+                    <Label for="examplepCity">Country</Label>
+                    <Input
+                      type="text"
+                      name="tCountry"
+                      value={values.tCountry}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                    />
+                    {touched.tCountry && errors.tCountry && (
+                      <span
+                        className="text-danger col-md-12 text-left mb-2"
+                        style={{ fontSize: 12 }}
+                      >
+                        {errors.tCountry}
+                      </span>
+                    )}
+                  </div>
+
+                  <div className="col-md-3">
+                    <Label for="examplepCity">City</Label>
+                    <Input
+                      type="text"
+                      name="tCity"
+                      value={values.tCity}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                    />
+                    {touched.tCity && errors.tCity && (
+                      <span
+                        className="text-danger col-md-12 text-left mb-2"
+                        style={{ fontSize: 12 }}
+                      >
+                        {errors.tCity}
+                      </span>
+                    )}
+                  </div>
+
+                  <div className="col-md-3">
+                    <Label for="exampleSelect">Provience</Label>
+                    <Input
+                      type="select"
+                      name="tProvience"
+                      value={values.tProvience}
+                      id="exampleSelect"
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                    >
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                    </Input>
+                    {touched.tProvience && errors.tProvience && (
+                      <span
+                        className="text-danger col-md-12 text-left mb-2"
+                        style={{ fontSize: 12 }}
+                      >
+                        {errors.tProvience}
+                      </span>
+                    )}
+                  </div>
+                  <div className="col-md-3">
+                    <Label for="examplepCity">Phone number</Label>
+                    <Input
+                      type="number"
+                      name="tPhoneNo"
+                      value={values.tPhoneNo}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                    />
+                    {touched.tPhoneNo && errors.tPhoneNo && (
+                      <span
+                        className="text-danger col-md-12 text-left mb-2"
+                        style={{ fontSize: 12 }}
+                      >
+                        {errors.tPhoneNo}
+                      </span>
+                    )}
+                  </div>
                 </div>
               </div>
 
-              <div className="row mt-4">
-                <div className="col-md-3">
-                  <Label for="exampleCity">Country</Label>
-                  <Input
-                    type="text"
-                    name="country"
-                    value={values.country}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                  />
-                  {touched.country && errors.country && (
-                    <span
-                      className="text-danger col-md-12 text-left mb-2"
-                      style={{ fontSize: 12 }}
+              <div>
+                <h6 className="mt-4">Permanent Address</h6>
+                <div className="row">
+                  <div className="col-md-3">
+                    <Label for="examplepCity">Country</Label>
+                    <Input
+                      type="text"
+                      name="pCountry"
+                      value={values.pCountry}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                    />
+                    {touched.pCountry && errors.pCountry && (
+                      <span
+                        className="text-danger col-md-12 text-left mb-2"
+                        style={{ fontSize: 12 }}
+                      >
+                        {errors.pCountry}
+                      </span>
+                    )}
+                  </div>
+
+                  <div className="col-md-3">
+                    <Label for="examplepCity">City</Label>
+                    <Input
+                      type="text"
+                      name="pCity"
+                      value={values.pCity}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                    />
+                    {touched.pCity && errors.pCity && (
+                      <span
+                        className="text-danger col-md-12 text-left mb-2"
+                        style={{ fontSize: 12 }}
+                      >
+                        {errors.pCity}
+                      </span>
+                    )}
+                  </div>
+
+                  <div className="col-md-3">
+                    <Label for="exampleSelect">Provience</Label>
+                    <Input
+                      type="select"
+                      name="pProvience"
+                      value={values.pProvience}
+                      id="exampleSelect"
+                      onChange={handleChange}
+                      onBlur={handleBlur}
                     >
-                      {errors.country}
-                    </span>
-                  )}
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                    </Input>
+                    {touched.pProvience && errors.pProvience && (
+                      <span
+                        className="text-danger col-md-12 text-left mb-2"
+                        style={{ fontSize: 12 }}
+                      >
+                        {errors.pProvience}
+                      </span>
+                    )}
+                  </div>
+                  <div className="col-md-3">
+                    <Label for="examplepCity">Phone number</Label>
+                    <Input
+                      type="number"
+                      name="pPhoneNo"
+                      value={values.pPhoneNo}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                    />
+                    {touched.pPhoneNo && errors.pPhoneNo && (
+                      <span
+                        className="text-danger col-md-12 text-left mb-2"
+                        style={{ fontSize: 12 }}
+                      >
+                        {errors.pPhoneNo}
+                      </span>
+                    )}
+                  </div>
                 </div>
-
-                <div className="col-md-3">
-                  <Label for="exampleCity">City</Label>
-                  <Input
-                    type="text"
-                    name="city"
-                    value={values.city}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                  />
-                  {touched.city && errors.city && (
-                    <span
-                      className="text-danger col-md-12 text-left mb-2"
-                      style={{ fontSize: 12 }}
-                    >
-                      {errors.city}
-                    </span>
-                  )}
-                </div>
-
-                <div className="col-md-3">
-                  <Label for="exampleSelect">state</Label>
-                  <Input
-                    type="select"
-                    name="state"
-                    value={values.state}
-                    id="exampleSelect"
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                  >
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                  </Input>
-                  {touched.state && errors.state && (
-                    <span
-                      className="text-danger col-md-12 text-left mb-2"
-                      style={{ fontSize: 12 }}
-                    >
-                      {errors.state}
-                    </span>
-                  )}
-                </div>
-
-                <div className="col-md-3">
-                  <Label for="exampleZip">Zip</Label>
-                  <Input
-                    type="number"
-                    name="zip"
-                    value={values.zip}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                  />
-                  {touched.zip && errors.zip && (
-                    <span
-                      className="text-danger col-md-12 text-left mb-2"
-                      style={{ fontSize: 12 }}
-                    >
-                      {errors.zip}
-                    </span>
-                  )}
-                </div>
-              </div>
-
-              <div className=" mt-4 w-50">
-                <Label>Email</Label>
-                <Input
-                  type="email"
-                  name="email"
-                  value={values.email}
-                  placeholder="enter your email"
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                />
-                {touched.email && errors.email && (
-                  <span
-                    className="text-danger col-md-12 text-left mb-2"
-                    style={{ fontSize: 12 }}
-                  >
-                    {errors.email}
-                  </span>
-                )}
-              </div>
-
-              <div className="row mt-4">
-                <div className="col-md-1">
-                  <br />
-                  <Input
-                    type="radio"
-                    name="gender"
-                    value="male"
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                  />
-                  <Label className="">male</Label>
-                </div>
-                <div className="col-md-1">
-                  <br />
-                  <Input
-                    type="radio"
-                    name="gender"
-                    value="female"
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                  />
-                  <Label className="align-right">female</Label>
-                </div>
-                {touched.gender && errors.gender && (
-                  <span
-                    className="text-danger col-md-12 text-left mb-2"
-                    style={{ fontSize: 12 }}
-                  >
-                    {errors.gender}
-                  </span>
-                )}
               </div>
 
               <br />
@@ -335,18 +392,8 @@ const SignupComponent = () => {
                 )}
               </div>
 
-              <div className="float-left">
-                <CustomInput
-                  type="switch"
-                  id="exampleCustomSwitch2"
-                  name="customSwitch"
-                  label="Information is correct"
-                />
-              </div>
-              <br />
-
-              <button className=" float-left  mt-4" onClick={handleSubmit}>
-                submit
+              <button className=" float-left  mt-4" type="button" onClick={handleSubmit}>
+                Update
               </button>
             </FormGroup>
           </Form>

@@ -1,5 +1,5 @@
 import React from "react";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, } from "react-router-dom";
 
 import LoginContainer from "../../container/authentcation/login/loginContaianer";
 import ProfileEditContainer from "../../container/profile/profileEditContainer";
@@ -17,10 +17,10 @@ const ShareContainer = () => {
 
     <Route exact path="/">  <RegistrationContainer /></Route>
     <Route exact path="/home" > <HomepageContainer /></Route>
-    <Route exact path="/profile">  <ProfileDisplayContainer /></Route>
+    <Route exact path="/profile">  <ProfileDisplayContainer/></Route>
     <Route exact path="/dashboard" ><DashboardContainer /></Route>
       <Route exact path="/login"><LoginContainer /> </Route>   
-      <Route exact path="/signup" ><ProfileEditContainer /></Route>
+      <Route exact path="/editProfile"><ProfileEditContainer/></Route>
       </Switch>
     </div>
   );

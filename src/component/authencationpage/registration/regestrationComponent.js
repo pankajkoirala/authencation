@@ -3,6 +3,7 @@ import "../../../component/authencationpage/login/login.css"
 import{Link} from "react-router-dom"
 import { Formik } from "formik";
 import{FormGroup,Label,Input} from "reactstrap"
+import {RegistrationValidator} from "../../../validation/utility/RegistrationValidation"
 
 
 const LoginComponent = () => {
@@ -15,6 +16,7 @@ const LoginComponent = () => {
         onSubmit={(values, action) => {
           console.log(values);
         }}
+        validationSchema={RegistrationValidator}
        
       >
         {({
@@ -73,7 +75,7 @@ const LoginComponent = () => {
               <Label for="examplePassword">Verify Password</Label>
               <Input
                 type="password"
-                name="password"
+                name="verifyPassword"
                 id="examplePassword"
                 placeholder="password placeholder"
                 value={values.verifyPassword}

@@ -1,9 +1,11 @@
 import React from "react"
+import HorizontalScroll from 'react-scroll-horizontal'
 
 
 const DashboardComponent=()=>{
+ 
   return(
-    <div> this is dashboardr</div>
+   <div>DashboardComponent</div>
   )
 }
  export default DashboardComponent

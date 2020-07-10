@@ -32,7 +32,9 @@ const Example = (props) => {
           </Nav>
           <div className="">
           <Link  className="m-2 font-weight-normal text-white" to="/login">login</Link>
-          <Link  className="m-2 font-weight-normal text-white" to="/">sign up</Link>
+          <Link  className="m-2 font-weight-normal text-white" to="/">Registration</Link>
+          <Link  className="m-2 font-weight-normal text-white" to="/editProfile">edit profile</Link>
+
           </div>
         </Collapse>
       </Navbar>

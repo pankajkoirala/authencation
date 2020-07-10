@@ -1,0 +1,24 @@
+ {
+  "personalInformation": {
+    "firstName": "pankaj koirala",
+    "middleName": "pd",
+    "lastName": "koirala",
+    "DOB": "2/6/2076",
+    "mobileNo": 9843765501,
+    "photo":"object"
+  },
+  "address": {
+    "permanent": {
+      "pCity": "nepal",
+      "pProvience": "1",
+      "country": "nepal",
+      "phoneNo": 9843765501
+    },
+    "temporary": {
+      "tCity": "nepal",
+      "tProvience": "1",
+      "tCountry": "nepal",
+      "tPhoneNo": 9843765501
+    }
+  }
+}
