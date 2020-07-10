@@ -141,7 +141,10 @@ const ProfileDisplayComponent = (props) => {
                       <label>Address</label>
                     </div>
                     <div className="col-md-6">
-  <p>{personalData.address.permanent.country},{personalData.address.permanent.phoneNo}</p>
+                      <p>
+                        {personalData.address.permanent.country},
+                        {personalData.address.permanent.phoneNo}
+                      </p>
                     </div>
                   </div>
                 </div>
