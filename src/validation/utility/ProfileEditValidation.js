@@ -8,8 +8,8 @@ export const ProfileEditValidator = Yup.object().shape({
     .required("Required"),
   middleName: Yup.string()
     .min(2, "Too Short!")
-    .max(50, "Too Long!")
-    .required("Required"),
+    .max(50, "Too Long!"),
+   
   lastName: Yup.string() 
     .min(2, "Too Short!")
     .max(50, "Too Long!")

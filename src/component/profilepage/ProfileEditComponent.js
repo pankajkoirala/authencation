@@ -1,5 +1,5 @@
-import React from "react";
-import { Form, FormGroup, Label, Input,  } from "reactstrap";
+import React, { useState } from "react";
+import { Form, FormGroup, Label, Input } from "reactstrap";
 import { Formik } from "formik";
 import { ProfileEditValidator } from "../../validation/utility/ProfileEditValidation";
 
@@ -116,8 +116,6 @@ const SignupComponent = () => {
                     type="number"
                     placeholder="enter your "
                     value={values.mobileNo}
-                    min={99999999}
-                    max={9999999999}
                     onChange={handleChange}
                     onBlur={handleBlur}
                   />
@@ -151,47 +149,43 @@ const SignupComponent = () => {
                     </span>
                   )}
                 </div>
-                
-
               </div>
               <div>
                 <h5 className="mt-4">gender</h5>
-                
-                  <div className=" mx-4">
-                    <br />
-                    <Input
-                      type="radio"
-                      name="gender"
-                      value="male"
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                    />
-                    <Label className="">male</Label>
-                  </div>
-                  <div className=" mx-4">
-                    <br />
-                    <Input
-                      type="radio"
-                      name="gender"
-                      value="female"
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                    />
-                    <Label className="align-right">female</Label>
-                  </div>
 
-                  {touched.gender && errors.gender && (
-                    <span
-                      className="text-danger col-md-12 text-left mb-2"
-                      style={{ fontSize: 12 }}
-                    >
-                      {errors.gender}
-                    </span>
-                  )}
-               
+                <div className=" mx-4">
+                  <br />
+                  <Input
+                    type="radio"
+                    name="gender"
+                    value="male"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                  />
+                  <Label className="">male</Label>
+                </div>
+                <div className=" mx-4">
+                  <br />
+                  <Input
+                    type="radio"
+                    name="gender"
+                    value="female"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                  />
+                  <Label className="align-right">female</Label>
+                </div>
+
+                {touched.gender && errors.gender && (
+                  <span
+                    className="text-danger col-md-12 text-left mb-2"
+                    style={{ fontSize: 12 }}
+                  >
+                    {errors.gender}
+                  </span>
+                )}
               </div>
 
-              
               <div>
                 <h6 className="mt-4">Temporary Address</h6>
                 <div className="row">
@@ -392,7 +386,11 @@ const SignupComponent = () => {
                 )}
               </div>
 
-              <button className=" float-left  mt-4" type="button" onClick={handleSubmit}>
+              <button
+                className=" float-left  mt-4"
+                type="button"
+                onClick={handleSubmit}
+              >
                 Update
               </button>
             </FormGroup>

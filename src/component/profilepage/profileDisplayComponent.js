@@ -1,6 +1,8 @@
 import React from "react";
+import{Link} from "react-router-dom"
 
 const ProfileDisplayComponent = (props) => {
+  
   let personalData = props.personalinfo;
   console.log(personalData);
   return (
@@ -58,12 +60,7 @@ const ProfileDisplayComponent = (props) => {
               </div>
             </div>
             <div className="col-md-2">
-              <input
-                type="submit"
-                className="profile-edit-btn"
-                name="btnAddMore"
-                value="Edit Profile"
-              />
+              <button><Link to="/editProfile">Edit Profile</Link></button>
             </div>
           </div>
           <div className="row">
