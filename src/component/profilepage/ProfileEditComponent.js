@@ -3,7 +3,7 @@ import { Form, FormGroup, Label, Input } from "reactstrap";
 import { Formik } from "formik";
 import { ProfileEditValidator } from "../../validation/utility/ProfileEditValidation";
 
-const SignupComponent = () => {
+const SignupComponent = (props) => {
   return (
     <div>
       <Formik
@@ -47,7 +47,10 @@ const SignupComponent = () => {
 
               <div className="row d-flex justify-content-around mt-4">
                 <div className="col-md-4">
-                  <Label>First Name</Label>
+                  <Label>
+                    First Name{" "}
+                    <span className="text-danger font-weight-bold ">*</span>{" "}
+                  </Label>
                   <Input
                     type="text"
                     name="firstName"
@@ -88,7 +91,10 @@ const SignupComponent = () => {
                 </div>
 
                 <div className="col-md-4">
-                  <Label>Last Name</Label>
+                  <Label>
+                    Last Name{" "}
+                    <span className="text-danger font-weight-bold ">*</span>
+                  </Label>
                   <Input
                     type="text"
                     name="lastName"
@@ -110,7 +116,10 @@ const SignupComponent = () => {
 
               <div className=" row d-flex justify-content-evenly mt-4">
                 <div className="col-md-4">
-                  <Label>mobileNo number</Label>
+                  <Label>
+                    mobileNo number{" "}
+                    <span className="text-danger font-weight-bold ">*</span>
+                  </Label>
                   <Input
                     name="mobileNo"
                     type="number"
@@ -130,7 +139,10 @@ const SignupComponent = () => {
                 </div>
 
                 <div className="col-4">
-                  <Label for="exampleDate">Date of Birth</Label>
+                  <Label for="exampleDate">
+                    Date of Birth{" "}
+                    <span className="text-danger font-weight-bold ">*</span>
+                  </Label>
                   <Input
                     type="date"
                     name="DOB"
@@ -151,7 +163,10 @@ const SignupComponent = () => {
                 </div>
               </div>
               <div>
-                <h5 className="mt-4">gender</h5>
+                <h5 className="mt-4">
+                  gender{" "}
+                  <span className="text-danger font-weight-bold ">*</span>
+                </h5>
 
                 <div className=" mx-4">
                   <br />
@@ -187,10 +202,13 @@ const SignupComponent = () => {
               </div>
 
               <div>
-                <h6 className="mt-4">Temporary Address</h6>
+                <h6 className="mt-4">Temporary Address </h6>
                 <div className="row">
                   <div className="col-md-3">
-                    <Label for="examplepCity">Country</Label>
+                    <Label for="examplepCity">
+                      Country{" "}
+                      <span className="text-danger font-weight-bold ">*</span>
+                    </Label>
                     <Input
                       type="text"
                       name="tCountry"
@@ -209,7 +227,10 @@ const SignupComponent = () => {
                   </div>
 
                   <div className="col-md-3">
-                    <Label for="examplepCity">City</Label>
+                    <Label for="examplepCity">
+                      City
+                      <span className="text-danger font-weight-bold ">*</span>
+                    </Label>
                     <Input
                       type="text"
                       name="tCity"
@@ -228,7 +249,10 @@ const SignupComponent = () => {
                   </div>
 
                   <div className="col-md-3">
-                    <Label for="exampleSelect">Provience</Label>
+                    <Label for="exampleSelect">
+                      Provience
+                      <span className="text-danger font-weight-bold ">*</span>
+                    </Label>
                     <Input
                       type="select"
                       name="tProvience"
@@ -389,7 +413,10 @@ const SignupComponent = () => {
               <button
                 className=" float-left  mt-4"
                 type="button"
-                onClick={handleSubmit}
+                onClick={() => {
+                  props.showDisplay();
+                  //handlesummit
+                }}
               >
                 Update
               </button>
